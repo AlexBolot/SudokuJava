@@ -2,7 +2,6 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
@@ -17,259 +16,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GrilleController
 {
     
-    //region List TextFields + GridPane
-    
-    @FXML
-    private TextField c31;
-    
-    @FXML
-    private TextField c75;
-    
-    @FXML
-    private TextField c30;
-    
-    @FXML
-    private TextField c74;
-    
-    @FXML
-    private TextField c33;
-    
-    @FXML
-    private TextField c77;
-    
-    @FXML
-    private TextField c32;
-    
-    @FXML
-    private TextField c76;
-    
-    @FXML
-    private TextField c35;
-    
-    @FXML
-    private TextField c34;
-    
-    @FXML
-    private TextField c78;
-    
-    @FXML
-    private TextField c37;
-    
-    @FXML
-    private TextField c36;
-    
-    @FXML
-    private TextField c38;
-    
-    @FXML
-    private TextField c80;
-    
-    @FXML
-    private TextField c82;
-    
-    @FXML
-    private TextField c81;
-    
-    @FXML
-    private TextField c40;
-    
-    @FXML
-    private TextField c84;
-    
-    @FXML
-    private TextField c83;
-    
-    @FXML
-    private TextField c42;
-    
-    @FXML
-    private TextField c86;
-    
-    @FXML
-    private TextField c41;
-    
-    @FXML
-    private TextField c85;
-    
-    @FXML
-    private TextField c00;
-    
-    @FXML
-    private TextField c44;
-    
-    @FXML
-    private TextField c88;
-    
-    @FXML
-    private TextField c43;
-    
-    @FXML
-    private TextField c87;
-    
-    @FXML
-    private TextField c02;
-    
-    @FXML
-    private TextField c46;
-    
-    @FXML
-    private TextField c01;
-    
-    @FXML
-    private TextField c45;
-    
-    @FXML
-    private TextField c04;
-    
-    @FXML
-    private TextField c48;
-    
-    @FXML
-    private TextField c03;
-    
-    @FXML
-    private TextField c47;
-    
-    @FXML
-    private TextField c06;
-    
-    @FXML
-    private TextField c05;
-    
-    @FXML
-    private TextField c08;
-    
-    @FXML
-    private TextField c07;
-    
-    @FXML
-    private TextField c51;
-    
-    @FXML
-    private TextField c50;
-    
-    @FXML
-    private TextField c53;
-    
-    @FXML
-    private TextField c52;
-    
-    @FXML
-    private TextField c11;
-    
-    @FXML
-    private TextField c55;
-    
-    @FXML
-    private TextField c10;
-    
-    @FXML
-    private TextField c54;
-    
-    @FXML
-    private TextField c13;
-    
-    @FXML
-    private TextField c57;
-    
-    @FXML
-    private TextField c12;
-    
-    @FXML
-    private TextField c56;
-    
-    @FXML
-    private TextField c15;
-    
-    @FXML
-    private TextField c14;
-    
-    @FXML
-    private TextField c58;
+    //region GridPane
     
     @FXML
     private GridPane GPSudoku;
     
     @FXML
-    private TextField c17;
-    
-    @FXML
-    private TextField c16;
-    
-    @FXML
-    private TextField c18;
-    
-    @FXML
-    private TextField c60;
-    
-    @FXML
-    private TextField c62;
-    
-    @FXML
-    private TextField c61;
-    
-    @FXML
-    private TextField c20;
-    
-    @FXML
-    private TextField c64;
-    
-    @FXML
-    private TextField c63;
-    
-    @FXML
-    private TextField c22;
-    
-    @FXML
-    private TextField c66;
-    
-    @FXML
-    private TextField c21;
-    
-    @FXML
-    private TextField c65;
-    
-    @FXML
-    private TextField c24;
-    
-    @FXML
-    private TextField c68;
-    
-    @FXML
-    private TextField c23;
-    
-    @FXML
-    private TextField c67;
-    
-    @FXML
-    private TextField c26;
-    
-    @FXML
-    private TextField c25;
-    
-    @FXML
-    private TextField c28;
-    
-    @FXML
-    private TextField c27;
-    
-    @FXML
-    private Button btnChoisir;
-    
-    @FXML
     private ChoiceBox ddlChoix;
-    
-    @FXML
-    private TextField c71;
-    
-    @FXML
-    private TextField c70;
-    
-    @FXML
-    private TextField c73;
-    
-    @FXML
-    private TextField c72;
     
     //endregion
     
@@ -371,73 +124,73 @@ public class GrilleController
                 
                 //String csvTotal = "";
                 
-                for (int i = 0; i < 50; i++)
+                //for (int i = 0; i < 50; i++)
+                //{
+                //String csv = "";
+                
+                for (Node node : GPSudoku.getChildren())
                 {
-                    //String csv = "";
-    
-                    for (Node node : GPSudoku.getChildren())
+                    if(node instanceof TextField)
                     {
-                        if(node instanceof TextField)
+                        ((TextField) node).setText("");
+                        node.setStyle("-fx-background-color:white");
+                    }
+                }
+                
+                grille.Vider();
+                
+                grille = new GRILLE(getDonnees());
+                
+                grille.Solve();
+                
+                int nombreDeCaseGardees = 25;
+                
+                for (int f = 0; f < nombreDeCaseGardees; f++)
+                {
+                    while (true)
+                    {
+                        int lig = ThreadLocalRandom.current().nextInt(0, 8 + 1);
+                        int col = ThreadLocalRandom.current().nextInt(0, 8 + 1);
+                        
+                        CASE c = grille.getCase(lig, col);
+                        if(!c.origin)
+                        {
+                            c.origin = true;
+                            break;
+                        }
+                    }
+                }
+                
+                grille.SetOrigin();
+                
+                for (CASE c : grille.listeCases)
+                {
+                    Node node = getNodeFromGridPane(GPSudoku, c.colonne, c.ligne);
+                    
+                    if(node instanceof TextField)
+                    {
+                        if(c.val != 0)
+                        {
+                            ((TextField) node).setText(Integer.toString(c.val));
+                            node.setStyle("-fx-background-color: CornflowerBlue;");
+                            
+                            //csv += "," + c.val;
+                            
+                        }
+                        else
                         {
                             ((TextField) node).setText("");
-                            node.setStyle("-fx-background-color:white");
-                        }
-                    }
-                    
-                    grille.Vider();
-                    
-                    grille = new GRILLE(getDonnees());
-                    
-                    grille.Solve();
-                    
-                    int nombreDeCaseGardees = 25;
-                    
-                    for (int f = 0; f < nombreDeCaseGardees; f++)
-                    {
-                        while (true)
-                        {
-                            int lig = ThreadLocalRandom.current().nextInt(0, 8 + 1);
-                            int col = ThreadLocalRandom.current().nextInt(0, 8 + 1);
+                            node.setStyle("-fx-background-color: White;");
                             
-                            CASE c = grille.getCase(lig, col);
-                            if(!c.origin)
-                            {
-                                c.origin = true;
-                                break;
-                            }
+                            //csv += ",0";
+                            
                         }
                     }
-                    
-                    grille.SetOrigin();
-                    
-                    for (CASE c : grille.listeCases)
-                    {
-                        Node node = getNodeFromGridPane(GPSudoku, c.colonne, c.ligne);
-                        
-                        if(node instanceof TextField)
-                        {
-                            if(c.val != 0)
-                            {
-                                ((TextField) node).setText(Integer.toString(c.val));
-                                node.setStyle("-fx-background-color: CornflowerBlue;");
-                                
-                                //csv += "," + c.val;
-                                
-                            }
-                            else
-                            {
-                                ((TextField) node).setText("");
-                                node.setStyle("-fx-background-color: White;");
-                                
-                                //csv += ",0";
-                                
-                            }
-                        }
-                    }
-                    
-                    //csvTotal += csv.substring(1) + "\n";
-                    
                 }
+                
+                //csvTotal += csv.substring(1) + "\n";
+                
+                //}
                 
                 //SerializationClass.save(csvTotal);
                 
