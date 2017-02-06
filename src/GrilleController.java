@@ -13,6 +13,16 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
+/*..................................................................................................
+ . Copyright (c)
+ .
+ . Code créé par :
+ . -> Alexandre BOLOT
+ . -> Victor MONSCH
+ . -> Christopher SABOYA
+ . -> Laurent MICHELET
+ .................................................................................................*/
+
 public class GrilleController
 {
     

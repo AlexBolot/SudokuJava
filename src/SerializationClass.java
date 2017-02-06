@@ -1,14 +1,14 @@
 import java.io.*;
 
-/*...........................
- . Copyright (c)            .
- .                          .
- . Code créé par :          .
- . -> Alexandre BOLOT       .
- . -> Victor MONSCH         .
- . -> Christopher SABOYA    .
- . -> Laurent MICHELET      .
- ...........................*/
+/*..................................................................................................
+ . Copyright (c)
+ .
+ . Code créé par :
+ . -> Alexandre BOLOT
+ . -> Victor MONSCH
+ . -> Christopher SABOYA
+ . -> Laurent MICHELET
+ .................................................................................................*/
 
 public abstract class SerializationClass
 {

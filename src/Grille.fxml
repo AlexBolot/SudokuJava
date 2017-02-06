@@ -3,6 +3,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
+<!--
+  ~ Copyright (c)
+  ~
+  ~ Code créé par :
+  ~ -> Alexandre BOLOT
+  ~ -> Victor MONSCH
+  ~ -> Christopher SABOYA
+  ~ -> Laurent MICHELET
+  -->
+
 <Pane maxHeight="340.0" maxWidth="295.0" minHeight="340.0" minWidth="295.0" prefHeight="340.0" prefWidth="295.0"
       xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GrilleController">
     <children>

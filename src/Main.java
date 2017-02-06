@@ -4,10 +4,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/*..................................................................................................
+ . Copyright (c)
+ .
+ . Code créé par :
+ . -> Alexandre BOLOT
+ . -> Victor MONSCH
+ . -> Christopher SABOYA
+ . -> Laurent MICHELET
+ .................................................................................................*/
+
 /**
  Méthode de résolution :
  <p>
- Case x.y :  -> Check Ligne   y pour val 1 à 9
+ Case x.y.b :
+ -> Check Ligne   y pour val 1 à 9
  -> Check Colonne x pour val 1 à 9
  -> Check Block   b pour val 1 à 9
  <p>

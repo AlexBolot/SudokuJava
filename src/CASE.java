@@ -1,6 +1,16 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/*..................................................................................................
+ . Copyright (c)
+ .
+ . Code créé par :
+ . -> Alexandre BOLOT
+ . -> Victor MONSCH
+ . -> Christopher SABOYA
+ . -> Laurent MICHELET
+ .................................................................................................*/
+
 class CASE implements Serializable
 {
     Integer colonne;

@@ -5,6 +5,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<!--
+  ~ Copyright (c)
+  ~
+  ~ Code créé par :
+  ~ -> Alexandre BOLOT
+  ~ -> Victor MONSCH
+  ~ -> Christopher SABOYA
+  ~ -> Laurent MICHELET
+  -->
+
 <Pane maxHeight="340.0" maxWidth="295.0" minHeight="340.0" minWidth="295.0" prefHeight="340.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccueilController">
    <children>
       <Label layoutX="80.0" layoutY="50.0" text="Sudoku Solver">

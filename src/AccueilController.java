@@ -8,6 +8,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/*..................................................................................................
+ . Copyright (c)
+ .
+ . Code créé par :
+ . -> Alexandre BOLOT
+ . -> Victor MONSCH
+ . -> Christopher SABOYA
+ . -> Laurent MICHELET
+ .................................................................................................*/
+
 public class AccueilController {
 
     @FXML

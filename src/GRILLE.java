@@ -2,6 +2,16 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/*..................................................................................................
+ . Copyright (c)
+ .
+ . Code créé par :
+ . -> Alexandre BOLOT
+ . -> Victor MONSCH
+ . -> Christopher SABOYA
+ . -> Laurent MICHELET
+ .................................................................................................*/
+
 @SuppressWarnings("ALL")
 class GRILLE implements Serializable
 {
