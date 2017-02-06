@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
+@SuppressWarnings("ALL")
 class GRILLE implements Serializable
 {
     ArrayList<CASE> listeCases;

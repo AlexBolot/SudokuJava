@@ -121,13 +121,6 @@ public class GrilleController
             
             //region Generer
             case Generer:
-                
-                //String csvTotal = "";
-                
-                //for (int i = 0; i < 50; i++)
-                //{
-                //String csv = "";
-                
                 for (Node node : GPSudoku.getChildren())
                 {
                     if(node instanceof TextField)
@@ -173,27 +166,14 @@ public class GrilleController
                         {
                             ((TextField) node).setText(Integer.toString(c.val));
                             node.setStyle("-fx-background-color: CornflowerBlue;");
-                            
-                            //csv += "," + c.val;
-                            
                         }
                         else
                         {
                             ((TextField) node).setText("");
                             node.setStyle("-fx-background-color: White;");
-                            
-                            //csv += ",0";
-                            
                         }
                     }
                 }
-                
-                //csvTotal += csv.substring(1) + "\n";
-                
-                //}
-                
-                //SerializationClass.save(csvTotal);
-                
                 break;
             //endregion
         }
@@ -257,32 +237,5 @@ public class GrilleController
         }
         
         return listeCases;
-    }
-    
-    private void PrintConsole (GRILLE grille)
-    {
-        for (CASE c : grille.listeCases)
-        {
-            String s = "";
-            
-            if(c.colonne == 2 || c.colonne == 5)
-            {
-                s += (c.val + " ");
-            }
-            else if(c.colonne == 8 && (c.ligne == 2 || c.ligne == 5))
-            {
-                s += (c.val + "\n\n");
-            }
-            else if(c.colonne == 8)
-            {
-                s += (c.val + "\n");
-            }
-            else
-            {
-                s += c.val;
-            }
-            
-            System.out.print(s);
-        }
     }
 }
