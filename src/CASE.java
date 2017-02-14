@@ -4,11 +4,11 @@ import java.util.ArrayList;
 /*..................................................................................................
  . Copyright (c)
  .
- . Code créé par :
- . -> Alexandre BOLOT
- . -> Victor MONSCH
- . -> Christopher SABOYA
- . -> Laurent MICHELET
+ . The CASE	 Class was Coded by : Alexandre BOLOT
+ .
+ . Last Modified : 14/02/17 17:39
+ .
+ . Contact : bolotalex06@gmail.com
  .................................................................................................*/
 
 class CASE implements Serializable
@@ -22,49 +22,10 @@ class CASE implements Serializable
     ArrayList<Integer> listeTemplate = new ArrayList();
     ArrayList<Integer> listePossibilitees = new ArrayList();
     
-    String listTempl()
-    {
-        String s = "";
-    
-        for (Integer i : listeTemplate)
-        {
-            s += (i + ",");
-        }
-        
-        return s;
-    }
-    String listPoss()
-    {
-        String s = "";
-        
-        for (Integer i : listePossibilitees)
-        {
-            s += (i + ",");
-        }
-        
-        return s;
-    }
-    
-    void refreshlistePossibilitees ()
-    {
-        ArrayList<Integer> newListPossibilitess = new ArrayList<>();
-    
-        for (Integer i : listePossibilitees)
-        {
-            if(i != 0)
-            {
-                newListPossibilitess.add(i);
-            }
-        }
-        
-        listePossibilitees = newListPossibilitess;
-    }
-    
     CASE ()
     {
         
     }
-    
     CASE (int c, int l, int v, ArrayList newListeTemplate)
     {
         colonne = c;
@@ -140,5 +101,44 @@ class CASE implements Serializable
             listeTemplate = newListeTemplate;
             listePossibilitees = listeTemplate;
         }
+    }
+    
+    String listTempl ()
+    {
+        String s = "";
+        
+        for (Integer i : listeTemplate)
+        {
+            s += (i + ",");
+        }
+        
+        return s;
+    }
+    
+    String listPoss ()
+    {
+        String s = "";
+        
+        for (Integer i : listePossibilitees)
+        {
+            s += (i + ",");
+        }
+        
+        return s;
+    }
+    
+    void refreshlistePossibilitees ()
+    {
+        ArrayList<Integer> newListPossibilitess = new ArrayList<>();
+        
+        for (Integer i : listePossibilitees)
+        {
+            if(i != 0)
+            {
+                newListPossibilitess.add(i);
+            }
+        }
+        
+        listePossibilitees = newListPossibilitess;
     }
 }

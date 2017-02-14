@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.Line?>
 <!--
   ~ Copyright (c)
   ~
-  ~ Code créé par :
-  ~ -> Alexandre BOLOT
-  ~ -> Victor MONSCH
-  ~ -> Christopher SABOYA
-  ~ -> Laurent MICHELET
+  ~ The Grille.fxml	 Class was Coded by : Alexandre BOLOT
+  ~
+  ~ Last Modified : 14/02/17 17:39
+  ~
+  ~ Contact : bolotalex06@gmail.com
   -->
 
-<Pane maxHeight="340.0" maxWidth="295.0" minHeight="340.0" minWidth="295.0" prefHeight="340.0" prefWidth="295.0"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GrilleController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="340.0" maxWidth="295.0" minHeight="340.0" minWidth="295.0"
+      prefHeight="340.0"
+      prefWidth="295.0" xmlns="http://javafx.com/javafx/8" fx:controller="GrilleController">
     <children>
         <GridPane fx:id="GPSudoku" layoutX="10.0" layoutY="13.0"
                   style="-fx-border-color: black; -fx-grid-lines-visible: true;">

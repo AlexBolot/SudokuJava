@@ -7,11 +7,11 @@ import javafx.stage.Stage;
 /*..................................................................................................
  . Copyright (c)
  .
- . Code créé par :
- . -> Alexandre BOLOT
- . -> Victor MONSCH
- . -> Christopher SABOYA
- . -> Laurent MICHELET
+ . The Main	 Class was Coded by : Alexandre BOLOT
+ .
+ . Last Modified : 14/02/17 17:38
+ .
+ . Contact : bolotalex06@gmail.com
  .................................................................................................*/
 
 /**

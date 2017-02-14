@@ -16,11 +16,11 @@ import java.util.concurrent.ThreadLocalRandom;
 /*..................................................................................................
  . Copyright (c)
  .
- . Code créé par :
- . -> Alexandre BOLOT
- . -> Victor MONSCH
- . -> Christopher SABOYA
- . -> Laurent MICHELET
+ . The GrilleController	 Class was Coded by : Alexandre BOLOT
+ .
+ . Last Modified : 14/02/17 17:38
+ .
+ . Contact : bolotalex06@gmail.com
  .................................................................................................*/
 
 public class GrilleController

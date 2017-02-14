@@ -5,11 +5,11 @@ import java.util.Collections;
 /*..................................................................................................
  . Copyright (c)
  .
- . Code créé par :
- . -> Alexandre BOLOT
- . -> Victor MONSCH
- . -> Christopher SABOYA
- . -> Laurent MICHELET
+ . The GRILLE	 Class was Coded by : Alexandre BOLOT
+ .
+ . Last Modified : 14/02/17 17:38
+ .
+ . Contact : bolotalex06@gmail.com
  .................................................................................................*/
 
 @SuppressWarnings("ALL")
@@ -114,8 +114,7 @@ class GRILLE implements Serializable
                 else
                 {
                     i--;
-                    while (listeCases.get(i).listePossibilitees.size() == 1 || listeCases.get(i).listePossibilitees.size() - 1 == listeCases.get(
-                            i).selectedValue)
+                    while (listeCases.get(i).listePossibilitees.size() == 1)
                     {
                         if(!listeCases.get(i).origin)
                         {
