@@ -7,7 +7,7 @@ import java.util.Collections;
  .
  . The GRILLE	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 14/02/17 17:38
+ . Last Modified : 14/02/17 08:37
  .
  . Contact : bolotalex06@gmail.com
  .................................................................................................*/
@@ -114,7 +114,8 @@ class GRILLE implements Serializable
                 else
                 {
                     i--;
-                    while (listeCases.get(i).listePossibilitees.size() == 1)
+                    while (listeCases.get(i).listePossibilitees.size() == 1 || listeCases.get(i).listePossibilitees.size() - 1 == listeCases.get(
+                            i).selectedValue)
                     {
                         if(!listeCases.get(i).origin)
                         {

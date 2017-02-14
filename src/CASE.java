@@ -6,7 +6,7 @@ import java.util.ArrayList;
  .
  . The CASE	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 14/02/17 17:39
+ . Last Modified : 14/02/17 17:42
  .
  . Contact : bolotalex06@gmail.com
  .................................................................................................*/
@@ -106,7 +106,7 @@ class CASE implements Serializable
     String listTempl ()
     {
         String s = "";
-        
+    
         for (Integer i : listeTemplate)
         {
             s += (i + ",");
@@ -130,7 +130,7 @@ class CASE implements Serializable
     void refreshlistePossibilitees ()
     {
         ArrayList<Integer> newListPossibilitess = new ArrayList<>();
-        
+    
         for (Integer i : listePossibilitees)
         {
             if(i != 0)
