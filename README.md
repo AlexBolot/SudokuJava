@@ -1,11 +1,11 @@
-<h1>SudokuJava <a href="https://www.codefactor.io/repository/github/alexbolot/pathfinder"><img src="https://www.codefactor.io/repository/github/alexbolot/pathfinder/badge" alt="" /></a></h1>
+<h1>SudokuJava <a href="https://www.codefactor.io/repository/github/alexbolot/sudokujava"><img src="https://www.codefactor.io/repository/github/alexbolot/sudokujava/badge" alt="" /></a></h1>
 <h2>Summary :</h2>
 <ol>
-<li><a href="https://github.com/AlexBolot/PathFinder#1---about-the-project ">About the project</a></li>
-<li><a href="https://github.com/AlexBolot/PathFinder#2---what-you-should-know ">What you should know</a></li>
-<li><a href="https://github.com/AlexBolot/PathFinder/#3---coming-soon ">Coming soon</a></li>
-<li><a href="https://github.com/AlexBolot/PathFinder/#4---libraries ">Libraries</a></li>
-<li><a href="https://github.com/AlexBolot/PathFinder/#5---author ">Author</a></li>
+<li><a href="https://github.com/AlexBolot/SudokuJava#1---about-the-project ">About the project</a></li>
+<li><a href="https://github.com/AlexBolot/SudokuJava#2---what-you-should-know ">What you should know</a></li>
+<li><a href="https://github.com/AlexBolot/SudokuJava/#3---coming-soon ">Coming soon</a></li>
+<li><a href="https://github.com/AlexBolot/SudokuJava/#4---libraries ">Libraries</a></li>
+<li><a href="https://github.com/AlexBolot/SudokuJava/#5---author ">Author</a></li>
 </ol>
 <h2>1 - About the project</h2>
 <h2>2 - What you should know</h2>
