@@ -92,16 +92,11 @@ public class GrilleController
                     
                     if(node instanceof TextField)
                     {
-                        if(c.val != 0)
-                        {
-                            ((TextField) node).setText(Integer.toString(c.val));
-                            node.setStyle("-fx-background-color: CornflowerBlue;");
-                        }
-                        else
-                        {
-                            ((TextField) node).setText("");
-                            node.setStyle("-fx-background-color: White;");
-                        }
+                     String text = c.val != 0 ? Integer.toString(c.val) : "";
+                     String style = c.val != 0 ? "CornflowerBlue;" : "White;"
+        
+                      ((TextField) node).setText(text);
+                      node.setStyle("-fx-background-color: " + style); 
                     }
                 }
                 break;
@@ -172,16 +167,11 @@ public class GrilleController
                     
                     if(node instanceof TextField)
                     {
-                        if(c.val != 0)
-                        {
-                            ((TextField) node).setText(Integer.toString(c.val));
-                            node.setStyle("-fx-background-color: CornflowerBlue;");
-                        }
-                        else
-                        {
-                            ((TextField) node).setText("");
-                            node.setStyle("-fx-background-color: White;");
-                        }
+                     	String text = c.val != 0 ? Integer.toString(c.val) : "";
+                     	String style = c.val != 0 ? "CornflowerBlue;" : "White;"
+        
+                      	((TextField) node).setText(text);
+                      	node.setStyle("-fx-background-color: " + style); 
                     }
                 }
                 break;
@@ -231,13 +221,15 @@ public class GrilleController
                 
                 CASE c = new CASE(col, ligne, v, listeTemplate);
                 
+				String style = v != 0 ? "CornflowerBlue;" : "White;"
+				
                 if(v != 0)
                 {
-                    node.setStyle("-fx-background-color: CornflowerBlue;");
+                    node.setStyle("-fx-background-color: " + style);
                 }
                 else
                 {
-                    node.setStyle("-fx-background-color: White;");
+                    node.setStyle("-fx-background-color: " + style);
                 }
                 
                 listeCases.add(c);
