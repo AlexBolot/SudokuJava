@@ -53,5 +53,3 @@
 <p>Note : those libraries are already included in : org.jetbrains.idea.maven.model.MavenArchetype@88f75e0f</p>
 <h2>5 - Author</h2>
 <p>Alexandre BOLOT<br />My <a href="https://github.com/AlexBolot">GitHub</a><br />My <a href="https://www.linkedin.com/in/alexandrebolot">LinkedIn</a></p>
-<nav><a href="http://divtable.com/" rel="nofollow">Div Table</a> | <a href="https://wordhtml.com/" rel="nofollow">Word to HTML</a> | <a href="https://html-cleaner.com/" rel="nofollow">HTML Cleaner</a> | <a href="https://html-online.com/editor/" rel="nofollow">HTML Editor</a> | <a href="https://htmlg.com/" rel="nofollow">Pro HTML Editor</a> | <a href="http://htmlcheatsheet.com/" rel="nofollow">HTML CheatSheet</a></nav>
-<p>&ndash; Please leave this line unchanged or subscribe for a premium HTML editor membership at htmlg.com</p>
