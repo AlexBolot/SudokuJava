@@ -13,43 +13,50 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
-/*................................................................................................................................
+/*..................................................................................................
  . Copyright (c)
  .
  . The GrilleController	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 22/09/17 14:15
+ . Last Modified : 14/02/17 08:37
  .
  . Contact : bolotalex06@gmail.com
- ...............................................................................................................................*/
+ .................................................................................................*/
 
-@SuppressWarnings ("unchecked")
 public class GrilleController
 {
-    public GridPane  GPSudoku;
-    public ChoiceBox ddlChoix;
-
+    
+    //region GridPane
+    
+    @FXML
+    private GridPane GPSudoku;
+    
+    @FXML
+    private ChoiceBox ddlChoix;
+    
+    //endregion
+    
     @FXML
     public void initialize () throws IOException
     {
-        ArrayList<Object> listeChoix = new ArrayList<>();
-
+        ArrayList listeChoix = new ArrayList();
+        
         for (Choix c : Choix.values())
         {
             listeChoix.add(c);
             listeChoix.add(new Separator());
         }
-
+        
         listeChoix.remove(listeChoix.size() - 1);
-
+        
         ddlChoix.setItems(FXCollections.observableArrayList(listeChoix));
     }
-
+    
     @FXML
     void btnChoisir_onAction (ActionEvent event) throws IOException
     {
         GRILLE grille = new GRILLE(getDonnees());
-
+        
         switch ((Choix) ddlChoix.getValue())
         {
             //region Enregistrer
@@ -58,7 +65,7 @@ public class GrilleController
                 grille.Save();
                 break;
             //endregion
-
+            
             //region Vider
             case Vider:
                 for (Node node : GPSudoku.getChildren())
@@ -69,51 +76,46 @@ public class GrilleController
                         node.setStyle("-fx-background-color:white");
                     }
                 }
-
+                
                 grille.Vider();
-
+                
                 break;
             //endregion
-
+            
             //region Loader
             case Loader:
                 grille.Load();
-
+                
                 for (CASE c : grille.listeCases)
                 {
                     Node node = getNodeFromGridPane(GPSudoku, c.colonne, c.ligne);
-
+                    
                     if(node instanceof TextField)
                     {
-                        if(c.val != 0)
-                        {
-                            ((TextField) node).setText(Integer.toString(c.val));
-                            node.setStyle("-fx-background-color: CornflowerBlue;");
-                        }
-                        else
-                        {
-                            ((TextField) node).setText("");
-                            node.setStyle("-fx-background-color: White;");
-                        }
+                     String text = c.val != 0 ? Integer.toString(c.val) : "";
+                     String style = c.val != 0 ? "CornflowerBlue;" : "White;"
+        
+                      ((TextField) node).setText(text);
+                      node.setStyle("-fx-background-color: " + style); 
                     }
                 }
                 break;
             //endregion
-
+            
             //region Resoudre
             case Resoudre:
                 Long t0 = System.currentTimeMillis();
-
+                
                 grille.Solve();
-
+                
                 Long t1 = System.currentTimeMillis();
-
+                
                 System.out.println(t1 - t0 + "\n");
-
+                
                 for (CASE c : grille.listeCases)
                 {
                     Node node = getNodeFromGridPane(GPSudoku, c.colonne, c.ligne);
-
+                    
                     if(node instanceof TextField)
                     {
                         ((TextField) node).setText(Integer.toString(c.val));
@@ -121,7 +123,7 @@ public class GrilleController
                 }
                 break;
             //endregion
-
+            
             //region Generer
             case Generer:
                 for (Node node : GPSudoku.getChildren())
@@ -132,22 +134,22 @@ public class GrilleController
                         node.setStyle("-fx-background-color:white");
                     }
                 }
-
+                
                 grille.Vider();
-
+                
                 grille = new GRILLE(getDonnees());
-
+                
                 grille.Solve();
-
+                
                 int nombreDeCaseGardees = 25;
-
+                
                 for (int f = 0; f < nombreDeCaseGardees; f++)
                 {
                     while (true)
                     {
                         int lig = ThreadLocalRandom.current().nextInt(0, 8 + 1);
                         int col = ThreadLocalRandom.current().nextInt(0, 8 + 1);
-
+                        
                         CASE c = grille.getCase(lig, col);
                         if(!c.origin)
                         {
@@ -156,32 +158,27 @@ public class GrilleController
                         }
                     }
                 }
-
+                
                 grille.SetOrigin();
-
+                
                 for (CASE c : grille.listeCases)
                 {
                     Node node = getNodeFromGridPane(GPSudoku, c.colonne, c.ligne);
-
+                    
                     if(node instanceof TextField)
                     {
-                        if(c.val != 0)
-                        {
-                            ((TextField) node).setText(Integer.toString(c.val));
-                            node.setStyle("-fx-background-color: CornflowerBlue;");
-                        }
-                        else
-                        {
-                            ((TextField) node).setText("");
-                            node.setStyle("-fx-background-color: White;");
-                        }
+                     	String text = c.val != 0 ? Integer.toString(c.val) : "";
+                     	String style = c.val != 0 ? "CornflowerBlue;" : "White;"
+        
+                      	((TextField) node).setText(text);
+                      	node.setStyle("-fx-background-color: " + style); 
                     }
                 }
                 break;
             //endregion
         }
     }
-
+    
     private Node getNodeFromGridPane (GridPane gridPane, int col, int row)
     {
         for (Node node : gridPane.getChildren())
@@ -193,18 +190,18 @@ public class GrilleController
         }
         return null;
     }
-
+    
     private ArrayList<CASE> getDonnees ()
     {
         ArrayList<CASE> listeCases = new ArrayList<>();
-
+        
         Integer i = 0;
         Integer v;
         Integer col;
         Integer ligne;
-
+        
         ArrayList<Integer> listeTemplate = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
-
+        
         for (Node node : GPSudoku.getChildren())
         {
             if(node instanceof TextField)
@@ -217,28 +214,30 @@ public class GrilleController
                 {
                     v = 0;
                 }
-
+                
                 col = (i % 9);
                 ligne = (i / 9);
                 Collections.shuffle(listeTemplate);
-
+                
                 CASE c = new CASE(col, ligne, v, listeTemplate);
-
+                
+				String style = v != 0 ? "CornflowerBlue;" : "White;"
+				
                 if(v != 0)
                 {
-                    node.setStyle("-fx-background-color: CornflowerBlue;");
+                    node.setStyle("-fx-background-color: " + style);
                 }
                 else
                 {
-                    node.setStyle("-fx-background-color: White;");
+                    node.setStyle("-fx-background-color: " + style);
                 }
-
+                
                 listeCases.add(c);
-
+                
                 i++;
             }
         }
-
+        
         return listeCases;
     }
 }
